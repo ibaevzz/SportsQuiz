@@ -1,11 +1,9 @@
 package com.ibaevzz.sportsquiz
 
 import android.annotation.SuppressLint
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ibaevzz.sportsquiz.databinding.ActivityPlayBinding
 import com.ibaevzz.sportsquiz.databinding.AnswersBinding
 import com.ibaevzz.sportsquiz.db.Question
-import java.util.Random
-import kotlin.concurrent.thread
 
 class PlayActivity : AppCompatActivity() {
 
@@ -24,6 +20,7 @@ class PlayActivity : AppCompatActivity() {
     private var isFirst = true
     private var thread: Thread? = null
     private var num: Int = 0
+    private var lastAnswer: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +47,11 @@ class PlayActivity : AppCompatActivity() {
         num+=1
         isFirst = true
         isRun = true
-        val i = (list.indices).random()
+        var i = (list.indices).random()
+        while(i==lastAnswer){
+            i = (list.indices).random()
+        }
+        lastAnswer = i
 
         binding.question.text = list[i].question
 
@@ -68,6 +69,7 @@ class PlayActivity : AppCompatActivity() {
                 }
                 if(time==0){
                     isRun = false
+                    Toast.makeText(this, "Вы не успели(", Toast.LENGTH_SHORT).show()
                 }
             }
         }
