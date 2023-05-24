@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Question(@PrimaryKey(autoGenerate = true) val id: Long,
+data class Question(@PrimaryKey val id: Long,
                     val question: String,
                     val answers: List<String>,
                     val correctAnswer: Int,

@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
     private fun startGame(level: Int){
         val intent = Intent(this, PlayActivity::class.java)
         intent.putExtra("level", level)
+        dialog.dismiss()
         startActivity(intent)
-        finish()
     }
 }

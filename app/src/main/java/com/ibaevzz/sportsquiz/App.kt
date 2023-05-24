@@ -2,6 +2,7 @@ package com.ibaevzz.sportsquiz
 
 import android.app.Application
 import androidx.room.Room
+import com.ibaevzz.sportsquiz.db.Question
 import com.ibaevzz.sportsquiz.db.QuestionDatabase
 
 class App: Application() {

@@ -12,6 +12,6 @@ class Converter {
 
     @TypeConverter
     fun fromStringToList(str: String): List<String>{
-        return str.split(";;;")
+        return str.split(";;;").filter { it!="" }
     }
 }

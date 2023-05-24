@@ -8,4 +8,5 @@
     <string name="second_level">Средний уровень</string>
     <string name="hard_level">Сложный уровень</string>
     <string name="choose_level">Выберите уровень</string>
+    <string name="next">Следующий вопрос</string>
 </resources>
