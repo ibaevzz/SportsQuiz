@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Sports Quiz</string>
+    <string name="menu">Menu</string>
+    <string name="play">Играть</string>
+    <string name="wallpaper">Обои</string>
+    <string name="zero">0</string>
+    <string name="first_level">Легкий уровень</string>
+    <string name="second_level">Средний уровень</string>
+    <string name="hard_level">Сложный уровень</string>
+    <string name="choose_level">Выберите уровень</string>
+</resources>
